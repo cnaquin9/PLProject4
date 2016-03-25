@@ -38,7 +38,7 @@ print("\nSelect last_name, first_name, title, salary, name from s_emp e join s_d
 
 #select dept_id, avg(salary) from s_emp group by dept_id order by dept_id
 print("\nSelect dept_id, avg(salary) from s_emp group by dept_id order by dept_id: ")
-for department in { d[8] for d in sorted(s_emp[1::],key = lambda x: x[8]) }: print (sorted(department), (lambda l: round(sum(l) / len(l), 2))(map(float,[ e[6] for e in s_emp[1::] if e[8] == department ])))
+for department in { d[8] for d in sorted(s_emp[1::],key = lambda x: x[8]) }: print (department), (lambda l: round(sum(l) / len(l), 2))(map(float,[ e[6] for e in s_emp[1::] if e[8] == department ]))
 
 
 #select dept_id, avg(salary) from s_emp group by dept_id having avg(salary) < 1500
